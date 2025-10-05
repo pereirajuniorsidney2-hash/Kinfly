@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kinfly — Beleza & Ebooks</title>
+  <meta name="description" content="Kinfly - Produtos de beleza, maquiagens e ebooks para mulheres. Elegante, moderno e chamativo.">
+  <style>
+    :root{
+      --rose:#ff6fa3; /* rosa vibrante */
+      --gold:#cf9a3f; /* dourado suave */
+      --bg:#fff9fb;
+      --muted:#6b6b6b;
+      --card-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#fff);color:#111}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 32px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{display:flex;align-items:center;gap:10px}
+    .logo svg{width:56px;height:56px}
+    .brand h1{margin:0;font-size:20px;letter-spacing:1px}
+    nav a{margin-left:18px;text-decoration:none;color:var(--muted);font-weight:600}
+    .hero{display:flex;gap:40px;align-items:center;padding:36px 32px}
+    .hero-left{flex:1}
+    .hero-left h2{font-size:34px;margin:0 0 8px}
+    .hero-left p{color:var(--muted);margin:0 0 16px}
+    .cta{background:var(--rose);color:#fff;padding:12px 18px;border-radius:12px;border:none;font-weight:700;cursor:pointer;box-shadow:var(--card-shadow)}
+    .hero-right{flex:1;display:flex;justify-content:center}
+    .promo-card{width:320px;border-radius:18px;padding:16px;background:linear-gradient(180deg,rgba(255,255,255,0.85),#fff);box-shadow:var(--card-shadow);text-align:center}
+    .promo-card img{width:100%;border-radius:12px}
+    .container{padding:24px 32px}
+    .section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .product{background:#fff;border-radius:12px;padding:12px;box-shadow:var(--card-shadow);display:flex;flex-direction:column}
+    .product img{width:100%;border-radius:10px;object-fit:cover;height:180px}
+    .product h3{margin:8px 0 4px;font-size:16px}
+    .price{font-weight:800;color:var(--rose)}
+    .btn{margin-top:auto;padding:10px;border-radius:10px;border:none;background:var(--gold);color:#fff;font-weight:700;cursor:pointer}
+    footer{padding:28px 32px;border-top:1px solid #f0e8ec;margin-top:24px}
+    .footer-grid{display:grid;grid-template-columns:1fr 220px;gap:24px}
+    .newsletter input{padding:10px;border-radius:8px;border:1px solid #eee;width:100%}
+    .cart-fixed{position:fixed;right:18px;bottom:18px;background:var(--rose);color:#fff;padding:12px 14px;border-radius:50px;box-shadow:var(--card-shadow);cursor:pointer}
+    /* responsive */
+    @media (max-width:760px){.hero{flex-direction:column}.hero-right{order:-1}.logo svg{width:48px;height:48px}.brand h1{font-size:18px}} 
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">
+        <!-- Logo simples com nome apenas -->
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1">
+              <stop offset="0" stop-color="#ff9ab6"/>
+              <stop offset="1" stop-color="#ff6fa3"/>
+            </linearGradient>
+          </defs>
+          <rect width="200" height="200" rx="20" fill="#fff" />
+          <circle cx="60" cy="70" r="48" fill="url(#g)"/>
+          <g fill="#fff" font-family="Georgia, serif">
+            <text x="110" y="95" font-size="34" font-weight="700">K</text>
+            <text x="126" y="95" font-size="22">fly</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h1>Kinfly</h1>
+        <div style="font-size:12px;color:var(--muted)">Beleza • Maquiagem • Ebooks</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#produtos">Produtos</a>
+      <a href="#ebooks">Ebooks</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-left">
+      <h2>Brilhe sempre com Kinfly ✨</h2>
+      <p>Maquiagens, cuidados e ebooks pensados para realçar sua confiança. Cores rosa e dourado, estilo elegante e feminino.</p>
+      <div style="display:flex;gap:12px;align-items:center">
+        <button class="cta" onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})">Ver produtos</button>
+        <button class="cta" style="background:transparent;color:var(--rose);border:2px solid var(--rose)" onclick="document.getElementById('ebooks').scrollIntoView({behavior:'smooth'})">Ebooks</button>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="promo-card">
+        <img src="https://images.unsplash.com/photo-1542831371-d531d36971e6?w=800&q=80" alt="Promo">
+        <h3>Lançamento: Paleta Glow</h3>
+        <p style="color:var(--muted);font-size:14px">Sombra, iluminador e blush em uma paleta elegante.</p>
+        <div style="margin-top:10px;font-weight:800;color:var(--rose)">R$ 129,90</div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <section id="produtos">
+      <div class="section-title">
+        <h2>Produtos em destaque</h2>
+        <div style="color:var(--muted)">Promoções imperdíveis</div>
+      </div>
+      <div class="grid">
+        <!-- exemplo de produto -->
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&q=80" alt="Batons">
+          <h3>Kit Batons Lux</h3>
+          <div style="color:var(--muted);font-size:14px">3 cores matte, longa duração</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+            <div class="price">R$ 79,90</div>
+            <button class="btn" onclick="addToCart('Kit Batons Lux',79.90)">Adicionar</button>
+          </div>
+        </div>
+
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1543163521-1bf539c55f6a?w=800&q=80" alt="Creme">
+          <h3>Creme Hidratante Rose</h3>
+          <div style="color:var(--muted);font-size:14px">Hidratação intensa com perfume floral</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+            <div class="price">R$ 59,90</div>
+            <button class="btn" onclick="addToCart('Creme Hidratante Rose',59.90)">Adicionar</button>
+          </div>
+        </div>
+
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&q=80" alt="Paleta">
+          <h3>Paleta Glow</h3>
+          <div style="color:var(--muted);font-size:14px">Iluminador e sombras cintilantes</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+            <div class="price">R$ 129,90</div>
+            <button class="btn" onclick="addToCart('Paleta Glow',129.90)">Adicionar</button>
+          </div>
+        </div>
+
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800&q=80" alt="Ebook">
+          <h3>Ebook: Maquiagem Perfeita</h3>
+          <div style="color:var(--muted);font-size:14px">Guia passo a passo + templates de looks</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+            <div class="price">R$ 39,90</div>
+            <button class="btn" onclick="addToCart('Ebook: Maquiagem Perfeita',39.90)">Comprar</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="ebooks" style="margin-top:28px">
+      <div class="section-title">
+        <h2>Ebooks populares</h2>
+        <div style="color:var(--muted)">Aprenda com especialistas</div>
+      </div>
+      <div class="grid">
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=800&q=80" alt="Ebook 1">
+          <h3>Maquiagem Perfeita</h3>
+          <div style="color:var(--muted);font-size:14px">Técnicas, paletas e rotinas</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+            <div class="price">R$ 39,90</div>
+            <button class="btn" onclick="addToCart('Maquiagem Perfeita (Ebook)',39.90)">Comprar</button>
+          </div>
+        </div>
+
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1555685812-4b943f1b2b9b?w=800&q=80" alt="Ebook 2">
+          <h3>Rotina de Skincare</h3>
+          <div style="color:var(--muted);font-size:14px">Rotinas matinais e noturnas eficientes</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+            <div class="price">R$ 29,90</div>
+            <button class="btn" onclick="addToCart('Rotina de Skincare (Ebook)',29.90)">Comprar</button>
+          </div>
+        </div>
+
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=800&q=80" alt="Ebook 3">
+          <h3>Autoestima & Estilo</h3>
+          <div style="color:var(--muted);font-size:14px">Dicas de imagem e atitude</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+            <div class="price">R$ 19,90</div>
+            <button class="btn" onclick="addToCart('Autoestima & Estilo (Ebook)',19.90)">Comprar</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contato" style="margin-top:28px">
+      <div class="section-title">
+        <h2>Contato & suporte</h2>
+        <div style="color:var(--muted)">Estamos aqui para ajudar</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 320px;gap:18px">
+        <form onsubmit="event.preventDefault();alert('Mensagem enviada!');this.reset();" style="background:#fff;padding:18px;border-radius:12px;box-shadow:var(--card-shadow)">
+          <label>Nome</label>
+          <input required style="width:100%;padding:10px;margin:6px 0;border-radius:8px;border:1px solid #eee">
+          <label>Email</label>
+          <input type="email" required style="width:100%;padding:10px;margin:6px 0;border-radius:8px;border:1px solid #eee">
+          <label>Mensagem</label>
+          <textarea required style="width:100%;padding:10px;margin:6px 0;border-radius:8px;border:1px solid #eee;height:110px"></textarea>
+          <div style="display:flex;gap:10px;justify-content:flex-end">
+            <button class="btn" type="submit">Enviar</button>
+          </div>
+        </form>
+
+        <div style="background:#fff;padding:18px;border-radius:12px;box-shadow:var(--card-shadow)">
+          <h3>Informações</h3>
+          <p style="color:var(--muted);font-size:14px">Email: contato@kinfly.com<br>Prazo de envio: 2–7 dias úteis<br>Formas de pagamento: Cartão, Pix, Boleto</p>
+          <div style="margin-top:12px">
+            <strong>Siga-nos</strong>
+            <div style="display:flex;gap:8px;margin-top:8px">
+              <div style="width:36px;height:36px;border-radius:8px;background:var(--rose);display:flex;align-items:center;justify-content:center;color:#fff">IG</div>
+              <div style="width:36px;height:36px;border-radius:8px;background:var(--gold);display:flex;align-items:center;justify-content:center;color:#fff">FB</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h3>Kinfly</h3>
+        <p style="color:var(--muted)">Produtos pensados para mulheres que querem sentir-se mais confiantes todos os dias.</p>
+      </div>
+      <div class="newsletter">
+        <h4>Newsletter</h4>
+        <p style="color:var(--muted);font-size:13px">Receba ofertas e lançamentos.</p>
+        <div style="display:flex;gap:8px">
+          <input placeholder="Seu melhor email">
+          <button class="btn">Assinar</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cart-fixed" onclick="openCart()">👜 Carrinho (<span id="count">0</span>)</div>
+
+  <!-- Cart modal básico -->
+  <div id="cartModal" style="display:none;position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.4);align-items:center;justify-content:center">
+    <div style="background:#fff;width:92%;max-width:520px;border-radius:12px;padding:18px;box-shadow:var(--card-shadow);">
+      <h3>Seu carrinho</h3>
+      <div id="cartItems"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+        <strong>Total: R$ <span id="total">0.00</span></strong>
+        <div>
+          <button onclick="closeCart()" style="margin-right:8px;padding:8px 12px;border-radius:8px;border:1px solid #eee">Continuar comprando</button>
+          <button class="btn" onclick="checkout()">Finalizar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const cart=[];
+    function addToCart(name,price){
+      cart.push({name,price});
+      document.getElementById('count').innerText=cart.length;
+      alert(name + ' adicionado ao carrinho 🔥');
+    }
+    function openCart(){
+      const modal=document.getElementById('cartModal');
+      const items=document.getElementById('cartItems');
+      items.innerHTML='';
+      let total=0;
+      cart.forEach((c,i)=>{
+        total+=c.price;
+        const div=document.createElement('div');
+        div.style.display='flex';div.style.justifyContent='space-between';div.style.padding='8px 0';
+        div.innerHTML=`<div>${c.name}</div><div>R$ ${c.price.toFixed(2)} <button style=\"margin-left:8px\" onclick=\"removeItem(${i})\">remover</button></div>`;
+        items.appendChild(div);
+      });
+      document.getElementById('total').innerText=total.toFixed(2);
+      modal.style.display='flex';
+    }
+    function closeCart(){document.getElementById('cartModal').style.display='none'}
+    function removeItem(i){cart.splice(i,1);document.getElementById('count').innerText=cart.length;openCart()}
+    function checkout(){
+      if(cart.length===0){alert('Seu carrinho está vazio!');return}
+      // Simulação de checkout — aqui você conecta a um gateway real
+      alert('Obrigado pela compra! Em breve você receberá instruções por email. ✨');
+      cart.length=0;document.getElementById('count').innerText=0;closeCart();
+    }
+  </script>
+</body>
+</html>
